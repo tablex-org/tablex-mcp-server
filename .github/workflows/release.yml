@@ -92,9 +92,9 @@ jobs:
         with:
           path: app-repo
           token: ${{ secrets.TABLEX_APP_REPO_TOKEN }}
-          branch: chore/tablex-mcp-server-${{ steps.release.outputs.version }}
-          title: Update tablex MCP server to ${{ steps.release.outputs.version }}
-          commit-message: chore: update tablex MCP server to ${{ steps.release.outputs.version }}
+          branch: "chore/tablex-mcp-server-${{ steps.release.outputs.version }}"
+          title: "Update tablex MCP server to ${{ steps.release.outputs.version }}"
+          commit-message: "chore: update tablex MCP server to ${{ steps.release.outputs.version }}"
           body: |
             Updates tablex MCP server manifest entry.
 
