@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { access, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const appRepo = requiredEnv("APP_REPO");
@@ -17,6 +17,11 @@ const manifestPaths = [
 ];
 
 for (const manifestPath of manifestPaths) {
+  if (!(await exists(manifestPath))) {
+    console.log(`Skipping missing manifest: ${manifestPath}`);
+    continue;
+  }
+
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   const tool = manifest.tools?.find((entry) => entry.id === "tablex-mcp-server");
   if (!tool) {
@@ -39,4 +44,13 @@ function requiredEnv(name) {
   const value = process.env[name];
   if (!value) throw new Error(`${name} is required`);
   return value;
+}
+
+async function exists(path) {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
 }
