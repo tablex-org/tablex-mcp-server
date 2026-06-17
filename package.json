@@ -17,7 +17,8 @@
   "scripts": {
     "build": "tsc",
     "test": "npm run build && node --test dist/tests/*.test.js",
-    "package:release": "node scripts/package-release.mjs"
+    "package:release": "node scripts/package-release.mjs",
+    "sync:app-manifest": "node scripts/sync-app-manifest.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.13.0",
