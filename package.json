@@ -1,0 +1,26 @@
+{
+  "name": "tablex-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for tablex",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "bin": {
+    "tablex-mcp-server": "bin/tablex-mcp-server"
+  },
+  "files": ["bin", "dist/src", "server.json"],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "package:release": "node scripts/package-release.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.3"
+  }
+}
