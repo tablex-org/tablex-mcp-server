@@ -30,8 +30,6 @@ jobs:
 
       - name: Checkout MCP repo
         uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.release.outputs.tag }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
