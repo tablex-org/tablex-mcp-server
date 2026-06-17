@@ -61,9 +61,5 @@ export class TableXBridgeClient {
 
 function defaultBridgeDirectories(): string[] {
   const appSupport = join(homedir(), "Library", "Application Support");
-  return [
-    join(appSupport, "tablex"),
-    join(appSupport, "TableLeaf"),
-    join(appSupport, "DBClient"),
-  ];
+  return [join(appSupport, "tablex")];
 }

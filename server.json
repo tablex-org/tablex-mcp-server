@@ -1,12 +1,12 @@
 {
   "name": "io.github.tablex-org/tablex-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for tablex",
   "packages": [
     {
       "registry": "npm",
       "name": "tablex-mcp-server",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

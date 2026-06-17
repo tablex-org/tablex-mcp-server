@@ -1,6 +1,6 @@
 {
   "name": "tablex-mcp-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for tablex",
   "type": "module",
   "engines": {
@@ -9,7 +9,11 @@
   "bin": {
     "tablex-mcp-server": "bin/tablex-mcp-server"
   },
-  "files": ["bin", "dist/src", "server.json"],
+  "files": [
+    "bin",
+    "dist/src",
+    "server.json"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "npm run build && node --test dist/tests/*.test.js",
